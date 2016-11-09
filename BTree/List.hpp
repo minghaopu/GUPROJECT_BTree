@@ -33,7 +33,17 @@ public:
     void fileCheck(string filePath);
     int size();
     bool empty();
-    ~List() {};
+    ~List() {
+        ListNode* p = _head;
+        ListNode* next;
+        while (p) {
+            next = p->next;
+            delete p;
+            p = next;
+        }
+        _head = NULL;
+        _last = NULL;
+    };
 };
 
 #endif /* List_hpp */
