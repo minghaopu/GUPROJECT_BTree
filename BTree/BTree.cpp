@@ -81,21 +81,20 @@ void BTree::splitNode(BTNode *node, int index) {
     BTNode* p = new BTNode(_nodeSize,_childSize);
     BTNode* child = node->children[index];
     p->isLeaf = child->isLeaf;
-    int degree = _childSize / 2;
-    p->num = degree - 1;
-    for (int i = 0; i < degree - 1; i++) {
+    p->num = _degree - 1;
+    for (int i = 0; i < _degree - 1; i++) {
         
-        p->keys[i] = child->keys[i + degree];
-        child->keys[i + degree].first = "";
-        child->keys[i + degree].second = 0;
+        p->keys[i] = child->keys[i + _degree];
+        child->keys[i + _degree].first = "";
+        child->keys[i + _degree].second = 0;
     }
     if (!child->isLeaf) {
-        for (int i = 0; i < degree; i++) {
-            p->children[i] = child->children[i + degree];
-            child->children[i + degree] = NULL;
+        for (int i = 0; i < _degree; i++) {
+            p->children[i] = child->children[i + _degree];
+            child->children[i + _degree] = NULL;
         }
     }
-    child->num = degree - 1;
+    child->num = _degree - 1;
     for (int i = node->num; i > index; i--) {
         node->children[i + 1] = node->children[i];
     }
@@ -103,9 +102,9 @@ void BTree::splitNode(BTNode *node, int index) {
     for (int i = node->num - 1; i >= index; i--) {
         node->keys[i+1] = node->keys[i];
     }
-    node->keys[index] = child->keys[degree - 1];
-    child->keys[degree - 1].first = "";
-    child->keys[degree - 1].second = 0;
+    node->keys[index] = child->keys[_degree - 1];
+    child->keys[_degree - 1].first = "";
+    child->keys[_degree - 1].second = 0;
     node->num++;
 }
 
@@ -136,7 +135,7 @@ void BTree::fileCheck(string filePath) {
     double totalTime = 0.0;
     timeBegin = clock();
     
-    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/inputFile2.txt";
+    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/inputFile1.txt";
     ifstream inputData(testPath);
     string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
     

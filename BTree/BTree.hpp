@@ -12,6 +12,7 @@
 #include "Header.h"
 
 #define M 4;
+#define DEGREE 2;
 
 struct BTNode {
     int num;
@@ -24,6 +25,7 @@ struct BTNode {
 
 class BTree {
 private:
+    int _degree = DEGREE;
     BTNode* _root = NULL;
     int _M = M;
     int _nodeSize = _M - 1;

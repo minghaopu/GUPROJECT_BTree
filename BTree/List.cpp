@@ -88,7 +88,7 @@ void List::fileCheck(string filePath) {
     double totalTime = 0.0;
     timeBegin = clock();
     
-    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/inputFile2.txt";
+    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/inputFile1.txt";
     ifstream inputData(testPath);
     string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
     
