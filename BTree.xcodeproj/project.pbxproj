@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		708997AB1DD2C99300696612 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708997AA1DD2C99300696612 /* main.cpp */; };
 		708997B81DD2CD6100696612 /* List.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 708997B61DD2CD6100696612 /* List.cpp */; };
+		70F973901DD3BA6000C78C7D /* BTree.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 70F9738E1DD3BA6000C78C7D /* BTree.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,8 @@
 		708997B21DD2CA3600696612 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		708997B61DD2CD6100696612 /* List.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = List.cpp; sourceTree = "<group>"; };
 		708997B71DD2CD6100696612 /* List.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = List.hpp; sourceTree = "<group>"; };
+		70F9738E1DD3BA6000C78C7D /* BTree.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BTree.cpp; sourceTree = "<group>"; };
+		70F9738F1DD3BA6000C78C7D /* BTree.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = BTree.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +67,7 @@
 				708997B11DD2CA2500696612 /* Head */,
 				708997AA1DD2C99300696612 /* main.cpp */,
 				708997B61DD2CD6100696612 /* List.cpp */,
+				70F9738E1DD3BA6000C78C7D /* BTree.cpp */,
 			);
 			path = BTree;
 			sourceTree = "<group>";
@@ -72,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				708997B71DD2CD6100696612 /* List.hpp */,
+				70F9738F1DD3BA6000C78C7D /* BTree.hpp */,
 				708997B21DD2CA3600696612 /* Header.h */,
 			);
 			name = Head;
@@ -135,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				708997AB1DD2C99300696612 /* main.cpp in Sources */,
+				70F973901DD3BA6000C78C7D /* BTree.cpp in Sources */,
 				708997B81DD2CD6100696612 /* List.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,6 +268,7 @@
 				708997B01DD2C99300696612 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -7,15 +7,9 @@
 //
 
 #include "List.hpp"
-string toUpper(string s) {
-    for (int i = 0; i < s.length(); i++) {
-        s[i] =  toupper(s[i]);
-    }
-    return s;
-}
 
 List::List(string path) {
-    string testPath = "/Users/roneil/Project/BTree/p/Files/dictionaryFile.txt";
+    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/dictionaryFile.txt";
     ifstream inputData(testPath);
     string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
     replace_if(content.begin() , content.end(),
@@ -94,7 +88,7 @@ void List::fileCheck(string filePath) {
     double totalTime = 0.0;
     timeBegin = clock();
     
-    string testPath = "/Users/roneil/Project/BTree/p/Files/inputFile1.txt";
+    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/inputFile2.txt";
     ifstream inputData(testPath);
     string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
     
