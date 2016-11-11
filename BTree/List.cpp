@@ -8,9 +8,8 @@
 
 #include "List.hpp"
 
-List::List(string path) {
-    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/dictionaryFile.txt";
-    ifstream inputData(testPath);
+List::List(string dictionaryFilePath) {
+    ifstream inputData(dictionaryFilePath);
     string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
     replace_if(content.begin() , content.end(),
                [] (const char& c) { return c == '\r' ;},'\n');
@@ -82,14 +81,13 @@ int List::size() {
 bool List::empty() {
     return _total == 0;
 }
-void List::fileCheck(string filePath) {
+void List::fileCheck(string inputFilePath) {
     
     clock_t timeBegin, timeEnd;
     double totalTime = 0.0;
     timeBegin = clock();
     
-    string testPath = "/Users/roneil/Project/GUPROJECT_BTree/p/Files/inputFile1.txt";
-    ifstream inputData(testPath);
+    ifstream inputData(inputFilePath);
     string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
     
     replace_if(content.begin() , content.end(),
@@ -121,4 +119,22 @@ void List::fileCheck(string filePath) {
          << "The highest frequency word: " << _maxCount<<endl;
     cout << "Total (approx) runtime is " << totalTime << endl;
     
+}
+void List::removeAll(string removalFilePath) {
+
+    ifstream inputData(removalFilePath);
+    string content((istreambuf_iterator<char>(inputData)),(istreambuf_iterator<char>()));
+    replace_if(content.begin() , content.end(),
+               [] (const char& c) { return c == '\r' ;},'\n');
+    stringstream ss;
+    
+    string word;
+    if (content != "") {
+        ss.str(content);
+        while (getline(ss, word)) {
+            if (word != "") {
+                remove(toUpper(word));
+            }
+        }
+    }
 }

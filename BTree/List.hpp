@@ -31,6 +31,7 @@ public:
     void add(string word);
     void remove(string word);
     void fileCheck(string filePath);
+    void removeAll(string filePath);
     int size();
     bool empty();
     ~List() {
